@@ -1,16 +1,28 @@
-#include "libftprintf.h"
-int ft_putstr(char *s)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cscaroni <cscaroni@student.42urduliz.com>  +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/02/24 12:18:08 by cscaroni          #+#    #+#             */
+/*   Updated: 2026/02/24 17:47:47 by cscaroni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "ft_printf.h"
+
+int	ft_putstr(char *s)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!s)
-        return (write(1, "(null)", 6));//can't return NULL as such 'cause it returns an int
-    while (s[i] != '\0')
-    {
-        write(1, &s[i], 1);
-        i++;
-    }
-
-    return (i);
+	i = 0;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[i] != '\0')
+	{
+		write(1, &s[i], 1);
+		i++;
+	}
+	return (i);
 }

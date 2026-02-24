@@ -1,30 +1,37 @@
-NAME = libft.a
+*This project has been created as part of the 42 curriculum by Cscaroni.*
+# ft_printf
 
-CC = cc
+## Description
 
-CFLAGS = -Wall -Werror -Wextra
+ft_printf is a custom implementation of the standard C library function printf, aiming at recreating its behaviour with a focus on its ability to handle various format specifiers and a variable number of arguments.  
 
-SRC = 
+Through this project several topics require a closer look:
+- variadic functions
+- macros
+- data parsing
 
-OBJ = $(SRC:.c=.o)
+## Instructions
 
-HEADERS = libft.h
+To compile run the following command in the root directory:
 
-all:$(NAME)
+```bash
+make
+```
+This will generate the `libftprintf.a` static library file.
 
-$(NAME) : $(OBJ)
-	ar rcs $(NAME) $(OBJ)
+## Usage
+To use the library in your projects, include the header file libftprintf.h in your source files and link the `libftprintf.a` library during compilation.
 
-%.o: %.c $(HEADERS)
-	$(CC) $(CFLAGS) -c $< -o $@
+**Example compilation:**
+```bash
+cc -Wall -Werror -Wextra ft_myfunction.c libftprintf.a
+```
 
-clean:
-	rm -f $(OBJ)
- 
-fclean: clean
-	rm -f $(NAME)
+## Resources
+- https://www.geeksforgeeks.org/c/variadic-functions-in-c/
 
-re: fclean all
-
-.PHONY: all clean re fclean
+### AI Usage
+This project utilized AI assistance for:
+- Explaining the project structure and Makefile requirements.
+- Further clarification of certain concepts.
 
